@@ -113,6 +113,21 @@ docker compose up -d --build
 
 ---
 
+## 🤝 鸣谢 (Acknowledgements)
+
+本项目的核心基础框架与最初的灵感源自于优秀的开源项目 **[wangwangit/tts](https://github.com/wangwangit/tts)**。
+
+在此对原作者及所有开源社区贡献者表示最诚挚的感谢！没有开源社区的无私奉献，就没有本项目的诞生。
+
+本项目在原仓库的基础上进行了深度重构与二次开发，主要增加了以下特性：
+
+* 引入了基于 `FastAPI` 的异步非阻塞架构。
+* 增加了基于 MD5 指纹的哈希缓存极速响应机制。
+* 引入了自动生命周期管理（阅后即焚）与高频访问续期逻辑。
+* 专门针对第三方 Webhook 与系统间调用进行了网络配置与架构优化。
+
+---
+
 ## 📝 许可协议 (License)
 
 本项目遵循 [MIT License](https://www.google.com/search?q=LICENSE) 开源协议。
