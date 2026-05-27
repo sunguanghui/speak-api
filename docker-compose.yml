@@ -1,0 +1,18 @@
+services:
+  tts-api:
+    build: .
+    container_name: speak-tts-api
+    restart: unless-stopped
+    ports:
+      - "35000:35000"
+    environment:
+      # 强制设置容器内的时区为中国标准时间 (Asia/Shanghai)
+      - TZ=Asia/Shanghai
+    env_file:
+      - .env
+    volumes:
+      # 挂载宿主机的 mp3 目录到容器内
+      - ./mp3:/app/mp3
+      # 挂载宿主机的时区文件（双保险配置，确保系统底层时间与宿主机一致）
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
